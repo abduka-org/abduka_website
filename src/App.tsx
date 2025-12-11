@@ -30,7 +30,7 @@ function App() {
     <main className="flex flex-col min-w-full overflow-x-hidden">
       <Navbar activeScreen={activeScreen} isDarkTheme={isDarkTheme} />
 
-      <Home setActiveScreen={setActiveScreen} />
+      <Home setActiveScreen={setActiveScreen} isDarkTheme={isDarkTheme} />
     </main>
   );
 }

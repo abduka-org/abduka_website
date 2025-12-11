@@ -18,7 +18,7 @@ const Navbar = ({ activeScreen, isDarkTheme }: INavbarProps) => {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 flex flex-row items-center justify-between p-4"
+      className="fixed top-0 left-0 right-0 flex flex-row items-center justify-between p-4 z-99"
       aria-label="Navegação"
     >
       <button
