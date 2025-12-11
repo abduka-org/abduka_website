@@ -1,0 +1,56 @@
+import { useEffect, useRef } from "react";
+
+import Particles from "../ui/particles";
+import Text from "./Text";
+import Buttons from "./Buttons";
+import Table from "./Table";
+
+interface IHomeProps {
+  setActiveScreen: (value: "home") => void;
+  isDarkTheme: boolean;
+}
+
+const Home = ({ setActiveScreen, isDarkTheme }: IHomeProps) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setActiveScreen("home");
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section
+      ref={ref}
+      id="home"
+      className="relative grid grid-cols-1 place-items-center gap-y-12 w-full h-dvh py-16 px-4"
+      aria-label="Seção home"
+    >
+      <Particles
+        className="absolute inset-0 -z-1"
+        particleColors={isDarkTheme ? ["#fafafa"] : ["#18181b"]}
+        aria-hidden
+      />
+
+      <Table />
+
+      <article className="flex flex-col items-center gap-y-12 w-full">
+        <Text />
+
+        <Buttons />
+      </article>
+    </section>
+  );
+};
+
+export default Home;
