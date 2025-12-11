@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export type TActiveScreen = "home";
 
@@ -31,6 +32,8 @@ function App() {
       <Navbar activeScreen={activeScreen} isDarkTheme={isDarkTheme} />
 
       <Home setActiveScreen={setActiveScreen} isDarkTheme={isDarkTheme} />
+
+      <Footer />
     </main>
   );
 }
