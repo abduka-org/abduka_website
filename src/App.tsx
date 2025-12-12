@@ -4,8 +4,9 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Partners from "./components/Partners";
+import About from "./components/About";
 
-export type TActiveScreen = "home";
+export type TActiveScreen = "home" | "about" | "clients";
 
 function App() {
   const [activeScreen, setActiveScreen] = useState<TActiveScreen>("home");
@@ -35,6 +36,8 @@ function App() {
       <Home setActiveScreen={setActiveScreen} isDarkTheme={isDarkTheme} />
 
       <Partners />
+
+      <About setActiveScreen={setActiveScreen} />
 
       <Footer />
     </main>
