@@ -30,6 +30,7 @@ const About = ({ setActiveScreen }: IAboutProps) => {
 
   return (
     <section
+      ref={ref}
       id="about"
       className="flex flex-col gap-y-12 w-full py-16 px-4"
       aria-label="Seção Sobre"

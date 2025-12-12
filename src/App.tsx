@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Partners from "./components/Partners";
 import About from "./components/About";
+import Clients from "./components/Clients";
 
 export type TActiveScreen = "home" | "about" | "clients";
 
@@ -38,6 +39,8 @@ function App() {
       <Partners />
 
       <About setActiveScreen={setActiveScreen} />
+
+      <Clients setActiveScreen={setActiveScreen} />
 
       <Footer />
     </main>
