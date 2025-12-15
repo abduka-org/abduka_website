@@ -1,5 +1,8 @@
 import { useEffect, useRef } from "react";
+
 import Carousel from "./Carousel";
+
+import { clientsData } from "@/static/clientsData";
 
 interface IClientsProps {
   setActiveScreen: (value: "clients") => void;
@@ -16,13 +19,13 @@ const Clients = ({ setActiveScreen }: IClientsProps) => {
       ([entry]) => {
         if (entry.isIntersecting) setActiveScreen("clients");
       },
-      { threshold: 0.5 }
+      { rootMargin: "-50% 0px -50% 0px" }
     );
 
     observer.observe(element);
 
     return () => observer.disconnect();
-  }, []);
+  }, [setActiveScreen]);
 
   return (
     <section
@@ -31,7 +34,7 @@ const Clients = ({ setActiveScreen }: IClientsProps) => {
       className="relative grid grid-cols-1 gap-y-4 w-full py-16 px-4"
       aria-label="Seção Clientes"
     >
-      <h2 className="text-base font-semibold">Nossos valiosos clientes</h2>
+      <h2 className="text-base font-semibold">{clientsData.title}</h2>
 
       <Carousel />
     </section>
