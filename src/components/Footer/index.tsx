@@ -3,6 +3,8 @@ import Infos from "./Infos";
 import Buttons from "./Buttons";
 import Terms from "./Terms";
 
+import { footerData } from "@/static/footerData";
+
 const Footer = () => {
   return (
     <footer className="grid grid-cols-1 place-items-start gap-y-8 py-8 px-4 w-full bg-foreground/5 rounded-t-2xl">
@@ -17,7 +19,7 @@ const Footer = () => {
 
         <Terms />
 
-        <p className="text-sm">© 2023 Abduka. Todos os direitos reservados.</p>
+        <p className="text-sm">{footerData.copyright}</p>
       </div>
     </footer>
   );
