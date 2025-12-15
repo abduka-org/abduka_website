@@ -1,35 +1,49 @@
-import { Book, Home, Users, type LucideIcon } from "lucide-react";
+import { Book, Home, Moon, Sun, Users } from "lucide-react";
 
-interface INavbarLink {
-  id: string;
-  text: string;
-  icon: LucideIcon;
-  action: () => void;
-}
-
-interface INavbarData {
-  links: INavbarLink[];
-}
+import type { INavbarData } from "@/common/interfaces/Navbar.interfaces";
+import Logo from "@/assets/logo.png";
 
 export const navbarData: INavbarData = {
+  logo: {
+    src: Logo,
+    action: () =>
+      document.getElementById("home")?.scrollIntoView({ behavior: "smooth" }),
+  },
   links: [
     {
       id: "home",
       text: "Home",
       icon: Home,
-      action: () => {},
+      action: () =>
+        document.getElementById("home")?.scrollIntoView({ behavior: "smooth" }),
     },
     {
       id: "about",
       text: "Sobre",
       icon: Book,
-      action: () => {},
+      action: () =>
+        document
+          .getElementById("about")
+          ?.scrollIntoView({ behavior: "smooth" }),
     },
     {
       id: "clients",
       text: "Clientes",
       icon: Users,
-      action: () => {},
+      action: () =>
+        document
+          .getElementById("clients")
+          ?.scrollIntoView({ behavior: "smooth" }),
     },
   ],
+  theme: {
+    light: {
+      id: "light",
+      icon: Sun,
+    },
+    dark: {
+      id: "dark",
+      icon: Moon,
+    },
+  },
 };

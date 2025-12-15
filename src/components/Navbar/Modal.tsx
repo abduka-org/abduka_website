@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { BadgeCheck } from "lucide-react";
 
 import { Card, CardContent } from "../ui/card";
 
@@ -32,10 +33,11 @@ const Modal = ({ activeScreen }: IModalProps) => {
                 role="menuitem"
               >
                 <Icon size={16} aria-hidden />
+
                 {text}
 
                 {activeScreen === id && (
-                  <span className="absolute right-4 w-2 h-2 bg-primary rounded-full" />
+                  <BadgeCheck className="absolute right-4 w-4 h-4 stroke-primary rounded-full" />
                 )}
               </button>
             </li>

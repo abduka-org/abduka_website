@@ -1,19 +1,18 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 import { Button } from "../ui/button";
 import Switch from "./Switch";
+import Modal from "./Modal";
 
 import type { TActiveScreen } from "@/App";
-import Logo from "@/assets/logo.png";
-import Modal from "./Modal";
+import { navbarData } from "@/static/navbarData";
 
 interface INavbarProps {
   activeScreen: TActiveScreen;
-  isDarkTheme: boolean;
 }
 
-const Navbar = ({ activeScreen, isDarkTheme }: INavbarProps) => {
+const Navbar = ({ activeScreen }: INavbarProps) => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   return (
@@ -23,18 +22,14 @@ const Navbar = ({ activeScreen, isDarkTheme }: INavbarProps) => {
     >
       <button
         className="cursor-pointer"
-        onClick={() =>
-          document
-            .getElementById("home")
-            ?.scrollIntoView({ behavior: "smooth" })
-        }
+        onClick={navbarData.logo.action}
         aria-label="Voltar para o início"
       >
-        <img src={Logo} alt="Logo Abduka" loading="lazy" />
+        <img src={navbarData.logo.src} alt="Logo Abduka" loading="lazy" />
       </button>
 
       <div className="flex flex-row items-center gap-4">
-        <Switch isDarkTheme={isDarkTheme} />
+        <Switch />
 
         <Button size={"icon-sm"} onClick={() => setShowModal(!showModal)}>
           {showModal ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -46,4 +41,4 @@ const Navbar = ({ activeScreen, isDarkTheme }: INavbarProps) => {
   );
 };
 
-export default Navbar;
+export default memo(Navbar);

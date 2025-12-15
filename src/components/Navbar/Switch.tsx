@@ -1,19 +1,19 @@
-import { useCallback } from "react";
-import { Moon, Sun } from "lucide-react";
+import { useTheme } from "@/hooks/useTheme";
+import { navbarData } from "@/static/navbarData";
 
-interface ISwitchProps {
-  isDarkTheme: boolean;
-}
+const Switch = () => {
+  const { isDarkTheme, toggleTheme } = useTheme();
 
-const Switch = ({ isDarkTheme }: ISwitchProps) => {
-  const onToggle = useCallback(() => {
-    document.body.classList.toggle("dark");
-  }, []);
+  const themeConfig = isDarkTheme
+    ? navbarData.theme.dark
+    : navbarData.theme.light;
+
+  const Icon = themeConfig.icon;
 
   return (
     <button
       className="relative inline-flex items-center w-14 rounded-full bg-primary p-1 transition-all"
-      onClick={onToggle}
+      onClick={toggleTheme}
       aria-label="Mudar tema"
     >
       <span
@@ -21,11 +21,7 @@ const Switch = ({ isDarkTheme }: ISwitchProps) => {
           isDarkTheme ? "translate-x-full" : "translate-x-0"
         }`}
       >
-        {isDarkTheme ? (
-          <Moon className="w-4 h-4" />
-        ) : (
-          <Sun className="w-4 h-4" />
-        )}
+        <Icon className="w-4 h-4" />
       </span>
     </button>
   );
