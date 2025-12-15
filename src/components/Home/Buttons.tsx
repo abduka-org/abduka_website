@@ -1,11 +1,14 @@
+import { homeData } from "@/static/homeData";
 import { Button } from "../ui/button";
 
 const Buttons = () => {
   return (
     <div className="flex flex-col gap-y-4 w-full">
-      <Button variant={"default"}>Conheça como funciona</Button>
-
-      <Button variant={"outline"}>Agende uma demonstração</Button>
+      {homeData.buttons.map(({ id, variant, label, action }) => (
+        <Button variant={variant} key={id} onClick={action}>
+          {label}
+        </Button>
+      ))}
     </div>
   );
 };

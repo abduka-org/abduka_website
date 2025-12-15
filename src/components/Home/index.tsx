@@ -1,9 +1,10 @@
 import { useEffect, useRef } from "react";
 
 import Particles from "../ui/particles";
+import Board from "./Board";
 import Text from "./Text";
 import Buttons from "./Buttons";
-import Table from "./Table";
+
 import { useTheme } from "@/hooks/useTheme";
 
 interface IHomeProps {
@@ -44,7 +45,7 @@ const Home = ({ setActiveScreen }: IHomeProps) => {
         aria-hidden
       />
 
-      <Table />
+      <Board />
 
       <article className="flex flex-col items-center gap-y-12 w-full">
         <Text />
