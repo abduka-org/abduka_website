@@ -4,13 +4,15 @@ import Particles from "../ui/particles";
 import Text from "./Text";
 import Buttons from "./Buttons";
 import Table from "./Table";
+import { useTheme } from "@/hooks/useTheme";
 
 interface IHomeProps {
   setActiveScreen: (value: "home") => void;
-  isDarkTheme: boolean;
 }
 
-const Home = ({ setActiveScreen, isDarkTheme }: IHomeProps) => {
+const Home = ({ setActiveScreen }: IHomeProps) => {
+  const { isDarkTheme } = useTheme();
+
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -21,13 +23,13 @@ const Home = ({ setActiveScreen, isDarkTheme }: IHomeProps) => {
       ([entry]) => {
         if (entry.isIntersecting) setActiveScreen("home");
       },
-      { threshold: 0.5 }
+      { rootMargin: "-50% 0px -50% 0px" }
     );
 
     observer.observe(element);
 
     return () => observer.disconnect();
-  }, []);
+  }, [setActiveScreen]);
 
   return (
     <section
