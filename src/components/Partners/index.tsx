@@ -1,6 +1,6 @@
-import { GraduationCap, School, Users } from "lucide-react";
-
 import SpotlightCard from "../ui/spotlightCard";
+
+import { partnersData } from "@/static/partnersData";
 
 const Partners = () => {
   return (
@@ -13,23 +13,13 @@ const Partners = () => {
         className="grid grid-cols-3 gap-x-7 w-full px-4"
         spotlightColor="rgba(230, 170, 11, 0.25)"
       >
-        <div className="flex flex-col items-center gap-y-2">
-          <School className="w-12 h-12" strokeWidth={1} />
+        {partnersData.map(({ id, label, icon: Icon }) => (
+          <div key={id} className="flex flex-col items-center gap-y-2">
+            <Icon className="w-12 h-12" strokeWidth={1} />
 
-          <p className="text-xs font-bold">+100 escolas</p>
-        </div>
-
-        <div className="flex flex-col items-center gap-y-2">
-          <GraduationCap className="w-12 h-12" strokeWidth={1} />
-
-          <p className="text-xs font-bold">+20 faculdades</p>
-        </div>
-
-        <div className="flex flex-col items-center gap-y-2">
-          <Users className="w-12 h-12" strokeWidth={1} />
-
-          <p className="text-xs font-bold">+1000 alunos</p>
-        </div>
+            <p className="text-xs font-bold text-center">{label}</p>
+          </div>
+        ))}
       </SpotlightCard>
     </section>
   );
