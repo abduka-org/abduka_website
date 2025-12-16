@@ -1,5 +1,6 @@
-import { homeData } from "@/static/homeData";
 import { Button } from "../ui/button";
+
+import { homeData } from "@/static/homeData";
 
 const Buttons = () => {
   return (
