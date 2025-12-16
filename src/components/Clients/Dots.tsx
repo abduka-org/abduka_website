@@ -16,9 +16,9 @@ const Dots = ({ length, active, setActive }: IDotsProps) => {
       {lengthArray.map((_, index) => (
         <button
           key={index}
-          className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+          className={`w-4 h-4 rounded-full transition-colors duration-300 ${
             index === active
-              ? "w-4 bg-primary"
+              ? "w-8 bg-primary"
               : "bg-foreground/30 hover:bg-foreground/50"
           }`}
           onClick={() => setActive(index)}
