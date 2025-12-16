@@ -8,7 +8,11 @@ const Dots = ({ length, active, setActive }: IDotsProps) => {
   const lengthArray = Array.from({ length }, (_, index) => index);
 
   return (
-    <div className="flex justify-center mt-6 space-x-2">
+    <div
+      className="flex justify-center mt-6 space-x-2"
+      role="tablist"
+      aria-label="Navegação do carousel"
+    >
       {lengthArray.map((_, index) => (
         <button
           key={index}
@@ -18,6 +22,8 @@ const Dots = ({ length, active, setActive }: IDotsProps) => {
               : "bg-foreground/30 hover:bg-foreground/50"
           }`}
           onClick={() => setActive(index)}
+          role="tab"
+          aria-current={index === active ? "true" : undefined}
           aria-label={`Ir para o slide ${index + 1}`}
         />
       ))}

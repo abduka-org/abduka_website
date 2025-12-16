@@ -18,10 +18,10 @@ const Testimonial = ({ image, title, review, rating }: ITestimonialProps) => {
         <img
           className="w-12 h-12 rounded-full"
           src={image}
-          alt="Imagem do cliente"
+          alt={`Foto de ${title}`}
         />
 
-        <p className="text-base font-bold uppercase">{title}</p>
+        <h3 className="text-base font-bold uppercase">{title}</h3>
       </div>
 
       <p className="text-sm text-foreground/75">{review}</p>
