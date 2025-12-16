@@ -15,6 +15,7 @@ interface IFooterInfos {
 interface IFooterButtons {
   id: number;
   icon: IconType;
+  label: string;
   action: () => void;
 }
 
