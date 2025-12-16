@@ -36,8 +36,8 @@ const About = ({ setActiveScreen }: IAboutProps) => {
       className="flex flex-col gap-y-12 w-full py-16 px-4"
       aria-label="Seção Sobre"
     >
-      {aboutData.articles.map(({ id, image, text }) => (
-        <Article key={id} image={image} text={text} />
+      {aboutData.articles.map(({ id, image, alt, text }) => (
+        <Article key={id} image={image} alt={alt} text={text} />
       ))}
 
       <Student />

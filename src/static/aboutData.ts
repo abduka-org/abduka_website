@@ -8,6 +8,7 @@ export const aboutData: IAboutData = {
     {
       id: 1,
       image: TableGame,
+      alt: "Tabuleiro de xadrez",
       text: [
         "A educação exige mais do que conteúdo: requer competências-chave como protagonismo, criatividade e tomada de decisão. A Abduka entrega isso aplicando metodologias ativas dentro de uma experiência envolvente que eleva o engajamento e gera evidências reais de aprendizagem.",
         "As escolas lutam contra um cenário crítico: estudantes desmotivados, evasão crescente e dificuldades para desenvolver competências essenciais ao século XXI. A teoria isolada já não basta. A Abduka responde a esse desafio transformando a aprendizagem em prática, colaboração e resolução de problemas reais.",
@@ -16,6 +17,7 @@ export const aboutData: IAboutData = {
     {
       id: 2,
       image: Phones,
+      alt: "Telefones com a tela do aplicativo Abduka",
       text: [
         "A Abduka une gamificação, metodologia ativa e análise de dados para promover uma aprendizagem profunda, motivadora e alinhada às competências empreendedoras do EntreComp. O modelo híbrido permite aplicar a solução em qualquer sala de aula, com qualquer área do conhecimento.",
       ],
@@ -23,6 +25,7 @@ export const aboutData: IAboutData = {
     {
       id: 3,
       image: EntreComp,
+      alt: "Gráfica EntreComp",
     },
   ],
   student: {

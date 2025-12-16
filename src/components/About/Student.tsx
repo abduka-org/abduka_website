@@ -14,20 +14,29 @@ const Student = () => {
       </p>
 
       <div className="relative flex flex-col gap-y-4">
-        <div className="absolute top-12 left-6 w-px h-[80%] border border-dashed border-foreground z-0"></div>
+        <div
+          className="absolute top-12 left-6 w-px h-[80%] border border-dashed border-foreground z-0"
+          aria-hidden
+        ></div>
 
         <h3 className="text-sm font-medium">
           {aboutData.student.subtitles[0]}
         </h3>
 
-        {aboutData.student.topics.map(({ id, text }) => (
-          <div key={id} className="flex flex-row gap-x-2 items-center z-1">
-            <div className="p-3 bg-green-200 dark:bg-green-950 rounded-full border border-foreground">
-              <Users className="w-6 h-6 stroke-foreground" strokeWidth={1} />
-            </div>
-            <p className="text-xs text-foreground/75">{text}</p>
-          </div>
-        ))}
+        <ul className="flex flex-col gap-y-4 z-1">
+          {aboutData.student.topics.map(({ id, text }) => (
+            <li key={id} className="flex flex-row gap-x-2 items-center z-1">
+              <div className="p-3 bg-green-200 dark:bg-green-950 rounded-full border border-foreground">
+                <Users
+                  className="w-6 h-6 stroke-foreground"
+                  strokeWidth={1}
+                  aria-hidden
+                />
+              </div>
+              <p className="text-xs text-foreground/75">{text}</p>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className="relative flex flex-col gap-y-4">
