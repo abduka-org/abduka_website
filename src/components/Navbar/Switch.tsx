@@ -14,14 +14,18 @@ const Switch = () => {
     <button
       className="relative inline-flex items-center w-14 rounded-full bg-primary p-1 transition-all"
       onClick={toggleTheme}
-      aria-label="Mudar tema"
+      role="switch"
+      aria-label={
+        isDarkTheme ? "Mudar para modo claro" : "Mudar para modo escuro"
+      }
+      aria-checked={isDarkTheme}
     >
       <span
         className={`flex h-full aspect-square items-center justify-center p-1 rounded-full bg-secondary transition-transform duration-300 ${
           isDarkTheme ? "translate-x-full" : "translate-x-0"
         }`}
       >
-        <Icon className="w-4 h-4" />
+        <Icon className="w-4 h-4" aria-hidden />
       </span>
     </button>
   );

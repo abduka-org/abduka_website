@@ -31,8 +31,18 @@ const Navbar = ({ activeScreen }: INavbarProps) => {
       <div className="flex flex-row items-center gap-4">
         <Switch />
 
-        <Button size={"icon-sm"} onClick={() => setShowModal(!showModal)}>
-          {showModal ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+        <Button
+          size={"icon-sm"}
+          onClick={() => setShowModal(!showModal)}
+          aria-label={showModal ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={showModal}
+          aria-controls="mobile-menu"
+        >
+          {showModal ? (
+            <X className="w-4 h-4" aria-hidden />
+          ) : (
+            <Menu className="w-4 h-4" aria-hidden />
+          )}
         </Button>
       </div>
 

@@ -1,6 +1,7 @@
 interface IAboutArticle {
   id: number;
   image: string;
+  alt: string;
   text?: string[];
 }
 

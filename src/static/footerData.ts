@@ -36,16 +36,19 @@ export const footerData: IFooterData = {
     {
       id: 1,
       icon: FaLinkedinIn,
+      label: "Conheça nosso Linkedin",
       action: () => {},
     },
     {
       id: 2,
       icon: FaGithub,
+      label: "Conheça nosso Github",
       action: () => {},
     },
     {
       id: 3,
       icon: FaInstagram,
+      label: "Conheça nosso Instagram",
       action: () => {},
     },
   ],

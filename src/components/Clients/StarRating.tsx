@@ -12,7 +12,10 @@ const StarRating = ({ rating }: IStarRatingProps) => {
   const starClass = "w-4 h-4 stroke-primary fill-primary";
 
   return (
-    <div className="flex flex-row items-center gap-x-2">
+    <div
+      className="flex flex-row items-center gap-x-2"
+      aria-label={`Avaliação ${rating} de 5 estrelas`}
+    >
       {[...Array(fullStars)].map((_, i) => (
         <Star
           key={`full-${i}`}

@@ -12,7 +12,7 @@ const Footer = () => {
 
       <Infos />
 
-      <div className="w-full h-px bg-foreground/5"></div>
+      <div className="w-full h-px bg-foreground/5" aria-hidden></div>
 
       <div className="flex flex-col gap-y-4">
         <Buttons />
